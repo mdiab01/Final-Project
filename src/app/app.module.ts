@@ -26,7 +26,7 @@ import { LoginComponent } from './login/login.component';
     ClarityModule,
     BrowserAnimationsModule,
     ChartsModule,
-    RouterModule
+    RouterModule 
   ],
   
   providers: [],

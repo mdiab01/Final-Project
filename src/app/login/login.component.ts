@@ -17,7 +17,7 @@ export class LoginComponent {
 
   getLogin() {
     this._api.getLogin(this.login)
-    .subscribe((res:any) => {
+    .subscribe((res: any) => {
       this.results = res.results;
       console.log(res);
     })

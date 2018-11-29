@@ -9,7 +9,7 @@ export class StockService {
   url: string = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=";
   api: string = "94JFK9YXEMH7A3V5"
   
-  stocks = "msft";
+  stocks = "";
   
   constructor(private _http:HttpClient) { }
   

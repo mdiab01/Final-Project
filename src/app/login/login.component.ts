@@ -22,7 +22,7 @@ export class LoginComponent {
       this.results = response;
       window.sessionStorage.setItem('token', response.token);
       window.sessionStorage.setItem('userId', response.userId);
-      this.router.navigateByUrl('/mainpage');
+      this.router.navigateByUrl('mainpage');
     })
   }
 }

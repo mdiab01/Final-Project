@@ -2,7 +2,7 @@
     <form class="login">
         <section class="title">
             <h3 class="welcome">Welcome to</h3>
-            Company Product Name
+            M.A.D.Stocks
             <h5 class="hint">Use your Company ID to sign in or create one now</h5>
         </section>
         <div class="login-group">
@@ -12,8 +12,11 @@
                     <option>Administrator</option>
                 </select>
             </div>
-            <input class="username" type="text" id="login_username" placeholder="Username">
-            <input class="password" type="password" id="login_password" placeholder="Password">
+            <form>
+                <input [(ngModel)] = "login.email" name="email" class="username" type="text" id="login_username" placeholder="Username">
+                <input [(ngModel)] = "login.password" name="password" class="password" type="password" id="login_password" placeholder="Password">
+            </form>
+            
             <div class="checkbox">
                 <input type="checkbox" id="rememberme">
                 <label for="rememberme">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,18 +9,20 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
   login = {
-    username: "",
+    email: "",
     password: ""
   }
   results;
 
-  constructor(public _api:LoginService){}
+  constructor(public _api:LoginService, private router:Router){}
 
   getLogin() {
     this._api.getLogin(this.login)
-    .subscribe((res: any) => {
-      this.results = res.results;
-      console.log(res);
+    .subscribe((response: any) => {
+      this.results = response;
+      window.sessionStorage.setItem('token', response.token);
+      window.sessionStorage.setItem('userId', response.userId);
+      this.router.navigateByUrl('/mainpage');
     })
   }
 }

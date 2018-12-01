@@ -8,13 +8,13 @@ export class LoginService {
   api: string = "http://meanstack-2018-5-mahmud-phortonssf.c9users.io:8080/api/AppUsers"
   
   login = {
-    username: "",
+    email: "",
     password: ""
-  };
+  }
   
   constructor(private _http:HttpClient) { }
   
-  getLogin(login) {
-    return this._http.get(this.api)
+  getLogin(userinfo) {
+    return this._http.post(this.api + "/login", userinfo)
   }
 }

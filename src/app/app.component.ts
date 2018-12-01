@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StockService } from './stock.service';
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   title = 'Final-Project';
   stocks: string;
   results;
-  
+   
   constructor(public _api:StockService){}
   
   getStocks() {

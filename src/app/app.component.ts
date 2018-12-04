@@ -8,17 +8,16 @@ import { MainpageComponent } from './mainpage/mainpage.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Final-Project';
-  stocks: string;
-  results;
+  // title = 'Final-Project';
+  // stocks: string;
+  // results;
    
   constructor(public _api:StockService){}
   
-  getStocks() {
-    this._api.getStocks(this.stocks)
-    .subscribe((res:any) => {
-      this.results = res.results;
-      console.log(res);
-    })
-  }
+  // getStocks() {
+  //   this._api.getStocks(this.stocks)
+  //   .subscribe((res:any) => {
+  //     this.results = res.results;
+  //   })
+  // }
 }

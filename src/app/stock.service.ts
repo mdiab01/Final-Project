@@ -14,6 +14,6 @@ export class StockService {
   constructor(private _http:HttpClient) { }
   
   getStocks(stocks) {
-    return this._http.get(this.url + stocks + "&apikey=" + this.api)
+    return this._http.get(this.url + stocks + "&apikey=" + this.api + "&outputsize=compact")
   }
 }

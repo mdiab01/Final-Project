@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StockService } from '../stock.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -6,8 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent {
+ title = 'Final-Project';
+  stocks: string;
+  results;
 
-  constructor() { }
+  constructor(public _api:StockService, private router:Router) { }
+  
+  getLogout() {
+    window.sessionStorage.clear;
+    this.router.navigateByUrl('login')
+  }
+  
+  getStocks() {
+    this._api.getStocks(this.stocks)
+    .subscribe((res:any) => {
+      this.results = res.results;
+      console.log(res);
+    })
+  }
 
   public lineChartData:Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},

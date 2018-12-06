@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from './login.service';
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,10 @@ export class LoginComponent {
   }
   results;
 
-  constructor(public _api:LoginService, private router:Router){}
+  constructor(public _api:UserService, private router:Router){}
+getRegister() {
+    this.router.navigateByUrl('registration')
+}
 
   getLogin() {
     this._api.getLogin(this.login)

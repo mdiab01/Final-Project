@@ -15,6 +15,7 @@
             <form>
                 <input [(ngModel)] = "login.email" name="email" class="username" type="text" id="login_username" placeholder="Username">
                 <input [(ngModel)] = "login.password" name="password" class="password" type="password" id="login_password" placeholder="Password">
+                <!--<a routerLink = "registration">Sign Up</a>-->
             </form>
             
             <div class="checkbox">
@@ -27,7 +28,7 @@
             <!--    Invalid user name or password-->
             <!--</div>-->
             <button (click) = "getLogin()" class="btn btn-primary">Log In</button>
-            <a href="javascript://" class="signup">Sign up for a Company ID</a>
+            <a (click) = "getRegister()" class="registration">Sign up for a Company ID</a>
         </div>
     </form>
 </div>

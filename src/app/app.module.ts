@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { StockService } from './stock.service';
+import { RegistrationComponent } from './registration/registration.component';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { StockService } from './stock.service';
     AppComponent,
     LoginComponent,
     MainpageComponent,
+    RegistrationComponent,
   ],
   
   imports: [
@@ -32,7 +35,7 @@ import { StockService } from './stock.service';
     routes
   ],
   
-  providers: [StockService],
+  providers: [StockService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

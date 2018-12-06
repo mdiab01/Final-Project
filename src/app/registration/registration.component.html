@@ -1,0 +1,20 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            M.A.D.Stocks 
+            <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+        </section>
+        <div class="login-group">
+        
+            <form>
+                <input [(ngModel)] = "login.first" name="first" class="first" type="text" id="register_first" placeholder="First Name"> <br>
+                <input [(ngModel)] = "login.last" name="last" class="last" type="text" id="register_last" placeholder="Last Name "> <br>
+                <input [(ngModel)] = "login.email" name="email" class="username" type="text" id="register_email" placeholder="Username"> <br>
+                <input [(ngModel)] = "login.password" name="password" class="password" type="password" id="register_password" placeholder="Password">
+            </form>
+           
+            <button (click) = "getRegister()" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>

@@ -11,6 +11,7 @@ export class MainpageComponent {
  title = 'Final-Project';
   stocks: string;
   results;
+  dataarray = [];
 
   constructor(public _api:StockService, private router:Router) { }
   
@@ -22,15 +23,23 @@ export class MainpageComponent {
   getStocks() {
     this._api.getStocks(this.stocks)
     .subscribe((res:any) => {
-      this.results = res.results;
-      console.log(res);
+      this.results = res["Time Series (Daily)"]
+      
+      for (var key in this.results) {
+        this.dataarray.push(this.results[key]["4. close"]);
+        console.log(this.dataarray)
+      }
+      this.lineChartData[0].data = this.dataarray;
+      console.log(this.lineChartData[0].data)   
+       
+      this.lineChartData.splice(8)
+      console.log(this.lineChartData)
     })
+  
   }
-
   public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+    {data: [], label: 'Series A'},
+    
   ];
   public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions:any = {

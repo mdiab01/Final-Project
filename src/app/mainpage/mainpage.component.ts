@@ -34,13 +34,14 @@ export class MainpageComponent {
        
       this.lineChartData.splice(8)
       console.log(this.lineChartData)
+      
     })
   
   }
   public lineChartData:Array<any> = [
-    {data: [], label: 'Series A'},
+    {data: [1,4,8], label: 'Series A'},
     
-  ];
+  ];  
   public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions:any = {
     responsive: true

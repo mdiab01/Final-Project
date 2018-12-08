@@ -12,6 +12,7 @@ export class StockService {
   
   stocks = "";
   
+  
   constructor(private _http:HttpClient) { }
   
   getStocks(stocks) {

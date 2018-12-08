@@ -19,6 +19,10 @@ export class UserService {
     password: "", 
   }
 
+  userId = window.sessionStorage.getItem ('userId');
+  token = window.sessionStorage.getItem ('token');
+  
+  
   
   constructor(private _http:HttpClient) { }
   
@@ -28,5 +32,9 @@ export class UserService {
   
   getRegister(userinfo) {
     return this._http.post(this.api + "/register", userinfo)
+  }
+  
+  saveStock () {
+    return this._http.post(this.api + this.userId + "/favorites?access_token=" + this.token, )
   }
 }

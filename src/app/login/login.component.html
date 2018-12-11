@@ -1,10 +1,12 @@
 <div class="login-wrapper">
     <form class="login">
+        
         <section class="title">
             <h3 class="welcome">Welcome to</h3>
-            M.A.D.Stocks 
-            <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+            <h1 class="cname"> M.A.D.Stocks </h1>
+            <h6 class="hint1">Use your Company ID to sign in or create one now</h6>
         </section>
+        
         <div class="login-group">
             <div class="auth-source select">
                 <select id="login-auth-source-1">
@@ -12,10 +14,10 @@
                     <option>Administrator</option>
                 </select>
             </div>
+            
             <form>
-                <input [(ngModel)] = "login.email" name="email" class="username" type="text" id="login_username" placeholder="Username">
+                <input [(ngModel)] = "login.email" name="email" class="username" type="text" id="login_username" placeholder="Username"> <br>
                 <input [(ngModel)] = "login.password" name="password" class="password" type="password" id="login_password" placeholder="Password">
-                <!--<a routerLink = "registration">Sign Up</a>-->
             </form>
             
             <div class="checkbox">
@@ -24,12 +26,11 @@
                     Remember me
                 </label>
             </div>
-            <!--<div class="error active">-->
-            <!--    Invalid user name or password-->
-            <!--</div>-->
-            <button (click) = "getLogin()" class="btn btn-primary">Log In</button>
+            
+            <button (click) = "getLogin()" class="btn">Log In</button>
             <a (click) = "getRegister()" class="registration">Sign up for a Company ID</a>
         </div>
+        
     </form>
 </div>
 

@@ -15,7 +15,7 @@ export class LoginComponent {
   results;
 
   constructor(public _api:UserService, private router:Router){}
-getRegister() {
+  getRegister() {
     this.router.navigateByUrl('registration')
 }
 

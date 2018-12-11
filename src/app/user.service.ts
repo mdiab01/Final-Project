@@ -31,10 +31,10 @@ export class UserService {
   }
   
   getRegister(userinfo) {
-    return this._http.post(this.api + "/register", userinfo)
+    return this._http.post(this.api, userinfo)
   }
   
-  saveStock () {
-    return this._http.post(this.api + this.userId + "/favorites?access_token=" + this.token, )
+  saveStock(userId, token, userinfo) {
+    return this._http.post(this.api + userId + "/favorites?access_token=" + token, userinfo)
   }
 }

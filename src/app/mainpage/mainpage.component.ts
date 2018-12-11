@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../stock.service';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -25,7 +24,7 @@ export class MainpageComponent {
       console.log(res)
     })
   }
-  
+
   getLogout() {
     window.sessionStorage.clear();
     this.router.navigateByUrl('login')
@@ -45,7 +44,7 @@ export class MainpageComponent {
       for(let i = 0; i < list.length - 1; i++) {
         list2.push(list[i]["1"]["4. close"])
       }
-      
+
       for(let i = 0; i < list.length - 1; i++) {
         list3.push(list[i]["1"]["1. open"])
       }

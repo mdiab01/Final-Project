@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../stock.service';
 import { Router } from '@angular/router';
+// import { SearchbarComponent } from './searchbar';
 
 @Component({
   selector: 'app-mainpage',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent {
- title = 'Final-Project';
+ title = 'M.A.D.Stocks';
   stocks: string;
   results;
   dataarray = [];

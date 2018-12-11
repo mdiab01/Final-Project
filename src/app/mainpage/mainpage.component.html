@@ -1,9 +1,8 @@
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title }}
   </h1>
  <div>
-   <p>My Stocks</p>
    <button (click) = "getStocks()">Get!</button> 
    <input [(ngModel)] = "stocks">
  </div>
@@ -35,7 +34,6 @@
         <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
       </tr>
     </table>
-    <!--<button (click)="randomize()">CLICK</button>-->
     <button (click)="saveStocks()">Save</button>
   </div>
 </div>

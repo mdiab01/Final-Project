@@ -2,11 +2,11 @@
     <form class="login">
         <section class="title">
             <h3 class="welcome">Welcome to</h3>
-            M.A.D.Stocks 
-            <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+            <h1 class="cname"> M.A.D.Stocks</h1>
+            <h6 class="hint1">Use your Company ID to sign in or create one now</h6>
         </section>
-        <div class="login-group">
         
+        <div class="login-group">
             <form>
                 <input [(ngModel)] = "register.firstName" name="first" class="first" type="text" id="register_first" placeholder="First Name"> <br>
                 <input [(ngModel)] = "register.lastName" name="last" class="last" type="text" id="register_last" placeholder="Last Name "> <br>
@@ -14,7 +14,7 @@
                 <input [(ngModel)] = "register.password" name="password" class="password" type="password" id="register_password" placeholder="Password">
             </form>
            
-            <button (click) = "getRegister()" class="btn btn-primary">Register</button>
+            <button (click) = "getRegister()" class="btn">Register</button>
         </div>
     </form>
 </div>

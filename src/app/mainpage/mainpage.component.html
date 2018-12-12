@@ -4,15 +4,12 @@
   <h1 class="title">
     Welcome to {{ title }}
   </h1>
-  <!--<div class="searchform cf">-->
-  <!--<input [(ngModel)] = "stocks">-->
-  <!--<button (click) = "getStocks()">Search</button>-->
-  <!--</div>-->
 
    <button (click) = "getStocks()" class="click">Search</button> 
    <input [(ngModel)] = "stocks" class="sbar">
  
    <button (click) = "getLogout()" class="logout">Log Out</button>
+   
 </div> 
 
  <button (click)="saveStocks()" class="save">Save</button>
@@ -31,7 +28,7 @@
                 (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
-  <div class="pure-table pure-table-bordered" >
+  <div class="container" >
     <table class="table table-responsive table-condensed">
       <tr>
         <th *ngFor="let label of lineChartLabels">{{label}}</th>
@@ -42,5 +39,5 @@
     </table>
   </div>
 </div>
-
+ 
 </div>

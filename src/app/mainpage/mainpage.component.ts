@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../stock.service';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -8,19 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent {
- title = 'M.A.D.Stocks';
   stocks: string;
   results;
   dataarray = [];
   fav = {
-    favorites: "amzn"
-  }
+    favorites: ""
+  };
+  tstock: any;
 
   constructor(public _api:StockService, private router:Router) { }
   
  saveStock() {
     this._api.saveStock(window.sessionStorage.userId, window.sessionStorage.token, this.fav)
     .subscribe((res:any) => {
+      this.tstock = this.fav ['tsock']
       console.log(res)
     })
   }

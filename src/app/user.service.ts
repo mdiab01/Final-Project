@@ -34,7 +34,7 @@ export class UserService {
     return this._http.post(this.api, userinfo)
   }
   
-  saveStock(userId, token, userinfo) {
-    return this._http.post(this.api + userId + "/favorites?access_token=" + token, userinfo)
-  }
+  // saveStock(userId, token, userinfo) {
+  //   return this._http.post(this.api + userId + "/favorites?access_token=" + token, userinfo)
+  // }
 }

@@ -1,15 +1,21 @@
-<div style="text-align:center">
-  <h1>
+<div class= "background">
+  
+  <div style="text-align:center">
+  <h1 class="title">
     Welcome to {{ title }}
   </h1>
- <div>
-   <button (click) = "getStocks()">Get!</button> 
-   <input [(ngModel)] = "stocks">
- </div>
- <div>
-     <button (click) = "getLogout()">Log Out</button>
- </div>
+  <!--<div class="searchform cf">-->
+  <!--<input [(ngModel)] = "stocks">-->
+  <!--<button (click) = "getStocks()">Search</button>-->
+  <!--</div>-->
+
+   <button (click) = "getStocks()" class="click">Search</button> 
+   <input [(ngModel)] = "stocks" class="sbar">
+ 
+   <button (click) = "getLogout()" class="logout">Log Out</button>
 </div> 
+
+ <button (click)="saveStocks()" class="save">Save</button>
  
 <div class="row">
   <div class="col-md-6">
@@ -25,7 +31,7 @@
                 (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
-  <div class="col-md-6" style="margin-bottom: 10px">
+  <div class="pure-table pure-table-bordered" >
     <table class="table table-responsive table-condensed">
       <tr>
         <th *ngFor="let label of lineChartLabels">{{label}}</th>
@@ -34,6 +40,7 @@
         <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
       </tr>
     </table>
-    <button (click)="saveStocks()">Save</button>
   </div>
+</div>
+
 </div>

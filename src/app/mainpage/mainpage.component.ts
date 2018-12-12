@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../stock.service';
 import { Router } from '@angular/router';
-// import { SearchbarComponent } from './searchbar';
 
 @Component({
   selector: 'app-mainpage',
@@ -38,20 +37,30 @@ export class MainpageComponent {
       
       this.results = res["Time Series (Daily)"]
       
-      let list = Object.entries(this.results)
-      let list2 = []
-      let list3 = []
+      let info = Object.entries(this.results)
+      let info2 = []
+      let info3 = []
+      let info4 = []
+      let info5 = []
       
-      for(let i = 0; i < list.length - 1; i++) {
-        list2.push(list[i]["1"]["4. close"])
+      for(let i = 0; i < info.length - 1; i++) {
+        info2.push(info[i]["1"]["1. open"])
       }
 
-      for(let i = 0; i < list.length - 1; i++) {
-        list3.push(list[i]["1"]["1. open"])
+      for(let i = 0; i < info.length - 1; i++) {
+        info3.push(info[i]["1"]["2. high"])
+      }
+      
+       for(let i = 0; i < info.length - 1; i++) {
+        info4.push(info[i]["1"]["3. low"])
+      }
+      
+       for(let i = 0; i < info.length - 1; i++) {
+        info5.push(info[i]["1"]["4. close"])
       }
       // console.log(this.results["2018-07-19"]["4. close"])
-      console.log(list)
-      console.log(list2)
+      // console.log(info)
+      // console.log(info2)
       // this.results = res["Time Series (Daily)"]
       
       // const data2 = [];
@@ -69,23 +78,25 @@ export class MainpageComponent {
       // this.lineChartData.splice(8)
       // // console.log(this.lineChartData)
       
-      this.lineChartData = [{data: list2, label: "Series A" }, {data: list3, label: "Series B" },]
+      this.lineChartData = [{data: info2, label: "Open" }, {data: info3, label: "High" }, {data: info4, label: "Low" }, {data: info5, label: "Close" }]
     })
   
   }
   public lineChartData:Array<any> = [
-    {data: [], label: 'Series A'},
-    {data: [], label: 'Series B'},
+    {data: [], label: 'Open'},
+    {data: [], label: 'High'},
+    {data: [], label: 'Low'},
+    {data: [], label: 'Close'}
     
   ];  
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels:Array<any> = ['Jan.', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   public lineChartOptions:any = {
     responsive: true
   };
   public lineChartColors:Array<any> = [
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
+      borderColor: '#FDD006',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
@@ -93,7 +104,7 @@ export class MainpageComponent {
     },
     { // dark grey
       backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
+      borderColor: '#FF8400',
       pointBackgroundColor: 'rgba(77,83,96,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
@@ -101,7 +112,15 @@ export class MainpageComponent {
     },
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
+      borderColor: '#FF5500',
+      pointBackgroundColor: 'rgba(148,159,177,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    { // grey
+      backgroundColor: 'rgba(148,159,177,0.2)',
+      borderColor: '#C92100',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',

@@ -13,17 +13,24 @@ export class MainpageComponent {
   results;
   dataarray = [];
   fav = {
-    favorites: ""
+    ticker: ""
   };
-  tstock: any;
-
+  rez;
+  
   constructor(public _api:StockService, private router:Router) { }
   
  saveStock() {
     this._api.saveStock(window.sessionStorage.userId, window.sessionStorage.token, this.fav)
     .subscribe((res:any) => {
-      this.tstock = this.fav ['tsock']
       console.log(res)
+    })
+  }
+  
+  geteStock() {
+    this._api.geteStock(window.sessionStorage.userId, window.sessionStorage.token)
+    .subscribe((res:any) => {
+      this.rez = res;
+      console.log(this.rez)
     })
   }
 
@@ -31,13 +38,13 @@ export class MainpageComponent {
     window.sessionStorage.clear();
     this.router.navigateByUrl('login')
   }
-  
+   
   getStocks() {
     this._api.getStocks(this.stocks)
     .subscribe((res:any) => {
-      console.log(res["Time Series (Daily)"])
-      
       this.results = res["Time Series (Daily)"]
+      
+      this.fav.ticker = this.stocks;
       
       let info = Object.entries(this.results)
       let info2 = []
@@ -60,25 +67,6 @@ export class MainpageComponent {
        for(let i = 0; i < info.length - 1; i++) {
         info5.push(info[i]["1"]["4. close"])
       }
-      // console.log(this.results["2018-07-19"]["4. close"])
-      // console.log(info)
-      // console.log(info2)
-      // this.results = res["Time Series (Daily)"]
-      
-      // const data2 = [];
-      
-      // for (var key in this.results) {
-      //   this.dataarray.push(this.results[key]["4. close"]);
-      //   console.log(this.dataarray)
-      //   data2.push (this.dataarray.push(this.results[key]["4. close"]))
-      //   // data2.push (Object.entries(this.results["Time Series (Daily)"]))
-      // }
-      // console.log(data2)
-      // this.lineChartData[0].data = this.dataarray;
-      // // console.log(this.lineChartData[0].data)   
-       
-      // this.lineChartData.splice(8)
-      // // console.log(this.lineChartData)
       
       this.lineChartData = [{data: info2, label: "Open" }, {data: info3, label: "High" }, {data: info4, label: "Low" }, {data: info5, label: "Close" }]
     })

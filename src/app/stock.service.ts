@@ -30,4 +30,8 @@ export class StockService {
   saveStock(userId, token, userinfo) {
     return this._http.post(this.api2 + userId + "/favorites?access_token=" + token, userinfo)
   }
+  
+  geteStock(userId, token) {
+    return this._http.get(this.api2 + userId + "/favorites?access_token=" + token)
+  }
 }

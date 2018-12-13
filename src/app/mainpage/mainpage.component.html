@@ -1,5 +1,4 @@
 <div class= "background">
-  
   <div style="text-align:center">
   <h1 class="title">
     Welcome to M.A.D.Stocks
@@ -9,10 +8,16 @@
    <input [(ngModel)] = "stocks" class="sbar">
  
    <button (click) = "getLogout()" class="logout">Log Out</button>
-   
 </div> 
 
+
  <button (click)="saveStock()" class="save">Save</button>
+ <button (click)="geteStock()" class="save">Get</button>
+ 
+ <div *ngFor = "let rezult of rez">
+   <h3>{{rezult.ticker}}</h3>
+   </div>
+ 
  
 <div class="row">
   <div class="col-md-6">

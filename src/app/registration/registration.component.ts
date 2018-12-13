@@ -21,7 +21,7 @@ export class RegistrationComponent {
   constructor(public _api:UserService, private router:Router) { }
   
    getRegister() {
-       console.log(this.register);
+    //   console.log(this.register);
     this._api.getRegister(this.register)
     .subscribe((response: any) => {
       this.results = response;

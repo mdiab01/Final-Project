@@ -22,8 +22,6 @@ export class UserService {
   userId = window.sessionStorage.getItem ('userId');
   token = window.sessionStorage.getItem ('token');
   
-  
-  
   constructor(private _http:HttpClient) { }
   
   getLogin(userinfo) {
